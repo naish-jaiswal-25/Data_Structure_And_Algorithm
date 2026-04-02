@@ -9,14 +9,13 @@ public:
         // Base case
         dp[0][0][0] = grid[0][0];
         if (grid[0][0] < 0)
-            dp[0][0][1] = 0; // neutralize
+            dp[0][0][1] = 0;
         
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 for (int k = 0; k <= 2; k++) {
                     if (dp[i][j][k] == INT_MIN) continue;
                     
-                    // Move right
                     if (j + 1 < n) {
                         int val = grid[i][j+1];
                         dp[i][j+1][k] = max(dp[i][j+1][k], dp[i][j][k] + val);
