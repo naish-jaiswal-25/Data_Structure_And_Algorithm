@@ -103,7 +103,11 @@ class Solution {
     return zeroMergeLengths;
   }
 
- 
+  // Returns the indices of the adjacent groups that contain l and r completely.
+  //
+  // e.g.    groupIndices = [0, 1, 2, 3]
+  // adjacentGroupIndices = [0 (0, 1), 1 (1, 2), 2 (2, 3)]
+  // map(startGroupIndex = 1, endGroupIndex = 3) -> (1, 2)
   pair<int, int> mapToAdjacentGroupIndices(int startGroupIndex,
                                            int endGroupIndex) {
     return {startGroupIndex, endGroupIndex - 1};
